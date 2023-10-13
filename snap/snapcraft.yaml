@@ -10,7 +10,7 @@ description: |
   This is temporal-cli, which can be used to run a Temporal Server and interact with it.
 
 
-grade: devel
+grade: stable
 confinement: strict
 
 apps:
@@ -23,8 +23,9 @@ parts:
   temporal-cli:
     plugin: go
     source: https://github.com/temporalio/cli.git
+    source-tag: "v0.10.6"
     build-snaps:
       - go
     override-pull: |
       craftctl default
-      craftctl set version=$(git describe --tags --long | sed "s/^v//")
+      craftctl set version=$(git describe --tags | sed "s/^v//")
