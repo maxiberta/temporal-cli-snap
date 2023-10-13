@@ -1,0 +1,30 @@
+name: temporal
+base: core22
+adopt-info: temporal-cli
+summary: Use the CLI to run a Temporal Server and interact with it
+description: |
+  Temporal is a distributed, scalable, durable, and highly available orchestration
+  engine used to execute asynchronous, long-running business logic in a scalable
+  and resilient way.
+
+  This is temporal-cli, which can be used to run a Temporal Server and interact with it.
+
+
+grade: devel
+confinement: strict
+
+apps:
+  temporal:
+    command: bin/temporal
+    plugs:
+      - network-bind
+
+parts:
+  temporal-cli:
+    plugin: go
+    source: https://github.com/temporalio/cli.git
+    build-snaps:
+      - go
+    override-pull: |
+      craftctl default
+      craftctl set version=$(git describe --tags --long | sed "s/^v//")
