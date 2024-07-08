@@ -24,7 +24,7 @@ parts:
   temporal-cli:
     plugin: go
     source: https://github.com/temporalio/cli.git
-    source-tag: "v0.13.1"
+    source-tag: "v0.13.2"
     build-snaps:
       - go
     override-pull: |
