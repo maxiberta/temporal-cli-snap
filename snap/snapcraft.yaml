@@ -1,6 +1,9 @@
 name: temporal
-base: core22
+base: core24
 adopt-info: temporal-cli
+grade: devel
+confinement: strict
+compression: lzo
 summary: Use the CLI to run a Temporal Server and interact with it
 description: |
   Temporal is a distributed, scalable, durable, and highly available orchestration
@@ -8,11 +11,6 @@ description: |
   and resilient way.
 
   This is temporal-cli, which can be used to run a Temporal Server and interact with it.
-
-
-grade: devel
-confinement: strict
-compression: lzo
 
 apps:
   temporal:
