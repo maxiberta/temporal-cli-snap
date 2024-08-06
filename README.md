@@ -1,6 +1,7 @@
 # Temporal CLI Snap
 This is the snap package of the [Temporal Server CLI](https://github.com/temporalio/cli).
-Published https://snapcraft.io/temporal.
+
+Published at https://snapcraft.io/temporal.
 
 ## Command-line Installation
 
