@@ -16,6 +16,7 @@ apps:
   temporal:
     command: bin/temporal
     plugs:
+      - home
       - network-bind
 
 parts:
