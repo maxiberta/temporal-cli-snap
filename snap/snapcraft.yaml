@@ -27,6 +27,6 @@ parts:
       - go
     override-pull: |
       craftctl default
-      craftctl set version=$(git describe --tags --long --exclude "*-server-*" --exclude "*-nexus-*" | sed "s/^v//")
+      craftctl set version=$(git describe --tags --long | sed -E 's/-(.{12}).+-(g[a-f0-9])/-\1...-\2/'  | sed "s/^v//")
     prime:
       - bin/temporal
