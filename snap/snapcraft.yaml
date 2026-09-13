@@ -1,5 +1,5 @@
 name: temporal
-base: core24
+base: core26
 adopt-info: temporal-cli
 grade: stable
 confinement: strict
