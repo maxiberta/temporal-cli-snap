@@ -1,0 +1,22 @@
+name: EDGE amd64 builds from main (unstable)
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  repository_dispatch:
+    types: [trigger-edge-build-event]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: edge-build
+  cancel-in-progress: true
+
+jobs:
+  build-and-publish:
+    uses: ./.github/workflows/build-publish.yml
+    with:
+      channel: edge
+    secrets:
+      SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.STORE_LOGIN_EDGE }}
